@@ -13,10 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: $ github.event.pull_request.head.sha 
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 2
 
       - uses: anthropics/claude-code-security-review@main
         with:
           comment-pr: true
-          claude-api-key: $ secrets.ANTHROPIC_API_KEY 
+          claude-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
